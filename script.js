@@ -12,25 +12,32 @@ const message_error = document.getElementById('message_error');;
 contactform.addEventListener('submit',(e)=>
 {
 
-    var email_check = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    e.preventDefault();
+
+    const email_check = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     if(username.value === '' || username.value == null)
     {
-        e.preventDefault();
         username_error.innerHTML = "\*Name is required";
     }
 
     if(!email.value.match(email_check))
     {
-        e.preventDefault();
         email_error.innerHTML = "\*Enter valid email";
     }
 
     if(subject.value === '' || subject.value == null)
     {
-        e.preventDefault();
         subject_error.innerHTML = "\*This field is required";
     }
 
+    window.alert('Message Sent')
+
 })
+
+const formToReset = document.getElementById('contactform');
+      formToReset.addEventListener('submit', (e) => {
+         e.preventDefault();
+         formToReset.reset();
+      });
 
