@@ -19,22 +19,23 @@ contactform.addEventListener('submit',(e)=>
     if(username.value === '' || username.value == null)
     {
         username_error.innerHTML = "\*Name is required";
-    }
+        return username_error
+    }        
 
     if(!email.value.match(email_check))
     {
         email_error.innerHTML = "\*Enter valid email";
+        return email_error
     }
 
     if(subject.value === '' || subject.value == null)
     {
         subject_error.innerHTML = "\*This field is required";
+        return subject_error
     }
-})
 
-const formToReset = document.getElementById('contactform');
-      formToReset.addEventListener('submit', (e) => {
-         e.preventDefault();
-         formToReset.reset();
-      });
+    window.alert('Message Sent')
+    window.location.reload()
+
+})
 
