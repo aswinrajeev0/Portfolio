@@ -30,9 +30,6 @@ contactform.addEventListener('submit',(e)=>
     {
         subject_error.innerHTML = "\*This field is required";
     }
-
-    window.alert('Message Sent')
-
 })
 
 const formToReset = document.getElementById('contactform');
