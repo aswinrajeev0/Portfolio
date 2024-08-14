@@ -35,6 +35,7 @@ contactform.addEventListener('submit',(e)=>
     }
     
     contactform.submit()
+    contactform.reset()
 
 })
 
