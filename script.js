@@ -33,9 +33,8 @@ contactform.addEventListener('submit',(e)=>
         subject_error.innerHTML = "\*This field is required";
         return subject_error
     }
-
-    window.alert('Message Sent')
-    window.location.reload()
+    
+    contactform.submit()
 
 })
 
